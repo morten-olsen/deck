@@ -1,0 +1,12 @@
+/node_modules
+/.yarn
+/*.log
+/packages/*/node_modules
+/packages/*/pack
+/packages/*/*.log
+/packages/*/dist
+/packages/*/bundle
+/apps/*/node_modules
+/apps/*/*.log
+/apps/*/dist
+/apps/*/bundle

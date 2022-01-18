@@ -1,0 +1,18 @@
+{
+  "name": "@morten-olsen/deck-example",
+  "private": true,
+  "packageManager": "yarn@3.1.0",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "ncc build -o bundle src/index.ts",
+    "package": "pkg --out-path=pack dist/index.js"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.1",
+    "pkg": "^5.5.2"
+  },
+  "dependencies": {
+    "@morten-olsen/deck": "1.0.0",
+    "@morten-olsen/deck-apps-obs": "1.0.0"
+  }
+}

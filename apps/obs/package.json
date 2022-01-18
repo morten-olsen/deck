@@ -1,0 +1,16 @@
+{
+  "name": "@morten-olsen/deck-apps-obs",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "packageManager": "yarn@3.1.0",
+  "devDependencies": {
+    "@types/ps-node": "^0.1.1",
+    "@types/sharp": "^0.29.5"
+  },
+  "dependencies": {
+    "@morten-olsen/deck": "1.0.0",
+    "execa": "5.1.1",
+    "obs-websocket-js": "^4.0.3",
+    "ps-node": "^0.1.6"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@morten-olsen/deck-repo",
+  "version": "1.0.0",
+  "author": "Morten Olsen <morten+pgp@olsen.pro>",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "yarn@3.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:example": "yarn workspace @morten-olsen/deck-example run dev",
+    "build:lib": "tsc --build",
+    "build:lib:watch": "tsc --build --watch",
+    "build:example": "yarn workspace @morten-olsen/deck-example run build"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.9",
+    "@vercel/ncc": "^0.33.1",
+    "lerna": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
