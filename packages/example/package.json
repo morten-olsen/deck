@@ -15,7 +15,7 @@
     "pkg": "^5.5.2"
   },
   "dependencies": {
-    "@morten-olsen/deck": "1.0.0",
+    "@morten-olsen/deck": "^1.0.7",
     "@morten-olsen/deck-apps-obs": "^1.0.7"
   }
 }
