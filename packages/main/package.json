@@ -1,6 +1,6 @@
 {
   "name": "@morten-olsen/deck",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "dist/index.js",
   "author": "Morten Olsen <morten+pgp@olsen.pro>",
   "license": "MIT",
