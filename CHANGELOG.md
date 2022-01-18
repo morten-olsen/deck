@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2022-01-18)
+
+
+### Features
+
+* test ([6157088](https://github.com/morten-olsen/deck/commit/6157088b19fb758adc124a3411f4e9230a2a7fd7))
+
+
+
+
+
 ## 1.0.19 (2022-01-18)
 
 **Note:** Version bump only for package @morten-olsen/deck-repo
