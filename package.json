@@ -10,6 +10,7 @@
     "apps/*"
   ],
   "scripts": {
+    "version": "yarn install --no-immutable && git stage yarn.lock",
     "dev:example": "yarn workspace @morten-olsen/deck-example run dev",
     "build:lib": "tsc --build",
     "build:lib:watch": "tsc --build --watch",
