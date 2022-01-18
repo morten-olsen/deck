@@ -1,6 +1,6 @@
 {
   "name": "@morten-olsen/deck-example",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "packageManager": "yarn@3.1.0",
   "scripts": {
     "dev": "nodemon src/index.ts",
@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@morten-olsen/deck": "1.0.0",
-    "@morten-olsen/deck-apps-obs": "1.0.0"
+    "@morten-olsen/deck-apps-obs": "^1.0.7"
   }
 }
