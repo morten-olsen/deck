@@ -14,7 +14,7 @@
     "@types/sharp": "^0.29.5"
   },
   "dependencies": {
-    "@morten-olsen/deck": "1.0.0",
+    "@morten-olsen/deck": "^1.0.11",
     "execa": "5.1.1",
     "obs-websocket-js": "^4.0.3",
     "ps-node": "^0.1.6"
