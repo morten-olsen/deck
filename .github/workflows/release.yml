@@ -30,10 +30,13 @@ jobs:
           npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: |
           corepack enable
           yarn install
 
       - run: yarn lerna publish --conventional-commits --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
