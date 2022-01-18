@@ -2,6 +2,9 @@
   "name": "@morten-olsen/deck-example",
   "version": "1.0.9",
   "packageManager": "yarn@3.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "deckapp": "./bin/index.js"
   },
