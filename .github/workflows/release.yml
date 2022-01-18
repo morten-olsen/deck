@@ -36,7 +36,7 @@ jobs:
           corepack enable
           yarn install
 
-      - run: yarn lerna publish --conventional-commits --yes
+      - run: yarn lerna publish --conventional-commits --yes --no-verify-access
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
