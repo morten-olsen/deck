@@ -9,6 +9,7 @@
     "deckapp": "./bin/index.js"
   },
   "scripts": {
+    "postpublish": "yarn build",
     "dev": "nodemon src/index.ts",
     "build": "ncc build -o bundle src/index.ts",
     "package": "pkg --out-path=pack dist/index.js"

@@ -6,6 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "prepublish": "tsc --build"
+  },
   "devDependencies": {
     "@types/ps-node": "^0.1.1",
     "@types/sharp": "^0.29.5"
