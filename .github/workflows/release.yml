@@ -33,6 +33,4 @@ jobs:
           yarn install
 
       - run: yarn lerna publish --conventional-commits --yes
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
