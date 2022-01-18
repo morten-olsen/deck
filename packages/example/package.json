@@ -1,6 +1,6 @@
 {
   "name": "@morten-olsen/deck-example",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "packageManager": "yarn@3.1.0",
   "publishConfig": {
     "access": "public"
@@ -19,7 +19,7 @@
     "pkg": "^5.5.2"
   },
   "dependencies": {
-    "@morten-olsen/deck": "^1.1.0",
-    "@morten-olsen/deck-apps-obs": "^1.1.0"
+    "@morten-olsen/deck": "^1.1.1",
+    "@morten-olsen/deck-apps-obs": "^1.1.1"
   }
 }
