@@ -912,11 +912,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@morten-olsen/deck-apps-obs@1.0.0, @morten-olsen/deck-apps-obs@workspace:apps/obs":
+"@morten-olsen/deck-apps-obs@^1.0.12, @morten-olsen/deck-apps-obs@workspace:apps/obs":
   version: 0.0.0-use.local
   resolution: "@morten-olsen/deck-apps-obs@workspace:apps/obs"
   dependencies:
-    "@morten-olsen/deck": 1.0.0
+    "@morten-olsen/deck": ^1.0.11
     "@types/ps-node": ^0.1.1
     "@types/sharp": ^0.29.5
     execa: 5.1.1
@@ -929,10 +929,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@morten-olsen/deck-example@workspace:packages/example"
   dependencies:
-    "@morten-olsen/deck": 1.0.0
-    "@morten-olsen/deck-apps-obs": 1.0.0
+    "@morten-olsen/deck": ^1.0.11
+    "@morten-olsen/deck-apps-obs": ^1.0.12
     "@vercel/ncc": ^0.33.1
     pkg: ^5.5.2
+  bin:
+    deckapp: ./bin/index.js
   languageName: unknown
   linkType: soft
 
@@ -949,7 +951,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@morten-olsen/deck@1.0.0, @morten-olsen/deck@workspace:packages/main":
+"@morten-olsen/deck@^1.0.11, @morten-olsen/deck@workspace:packages/main":
   version: 0.0.0-use.local
   resolution: "@morten-olsen/deck@workspace:packages/main"
   dependencies:
