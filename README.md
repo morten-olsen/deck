@@ -4,13 +4,13 @@
 
 ## Usage
 
-A few important components to understand
+Important components to understand
 
 ### Button
 
 This represents a button on the Stream Deck and is responsible for defining what to draw and what to do when that button is pressed.
 
-```typescrpit
+```typescript
 import { Button, createText } from '@morten-olsen/deck';
 
 const myButton = new Button({
