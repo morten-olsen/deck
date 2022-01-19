@@ -48,6 +48,10 @@ class App<TButton extends Button = Button> extends Emitter<Events> {
     this.#buttons = this.#buttons.filter(b => b !== button);
     this.emit('remove', button);
   }
+
+  public onFocus?: () => void;
+
+  public onUnfocus?: () => void;
 }
 
 export { Button, App };
