@@ -1,18 +1,14 @@
 import { ObsApp, getOBSConfig } from '@morten-olsen/deck-apps-obs';
 import { App, Button, Runtime, createText } from '@morten-olsen/deck';
 
-const clock = new Button({
-  action: () => {},
-});
+const clock = new Button({});
 
 const entertain = new Button({
   image: createText('😀', { font: 'noto fonts emoji' }),
-  action: () => {},
 });
 
 const lights = new Button({
   image: createText('lights', { color: '#f39c12' }),
-  action: () => {},
 });
 
 const updateClock = () => {

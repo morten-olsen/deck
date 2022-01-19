@@ -18,7 +18,11 @@ class Runtime implements ActionApi {
   }
 
   get #current() {
-    return [...this.#stack].pop()!;
+    const current = [...this.#stack].pop();
+    if (!current) {
+      throw new Error('App stack is empty');
+    }
+    return current;
   }
 
   #render = () => {
@@ -59,7 +63,7 @@ class Runtime implements ActionApi {
 
   #onDown = (index: number) => {
     const button = this.#renderContext.get(index);
-    if (!button) return;
+    if (!button || !button.action) return;
     button.action(this);
   }
 
@@ -80,7 +84,7 @@ class Runtime implements ActionApi {
   public back = () => {
     if (this.#stack.length < 2) return;
     this.updateStack((stack) => {
-      stack.pop()!;
+      stack.pop();
       return stack;
     });
   }

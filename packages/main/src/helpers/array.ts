@@ -1,7 +1,7 @@
 export const chunkArray = <T>(array: T[], size: number) => {
-  let result:T[][] = []
-  for (let value of array){
-      let lastArray = result[result.length -1 ]
+  const result:T[][] = []
+  for (const value of array){
+      const lastArray = result[result.length -1 ]
       if(!lastArray || lastArray.length == size){
           result.push([value])
       } else{

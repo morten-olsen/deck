@@ -7,7 +7,7 @@ import { ConfigSchema } from './schema';
 const paths = envPaths('deckjs');
 const appConfigLocation = path.join(paths.config, 'apps');
 
-export const getConfig = async <TConfig = any>(appName: string, schema: ConfigSchema) => {
+export const getConfig = async <TConfig>(appName: string, schema: ConfigSchema) => {
   const configLoction = path.join(appConfigLocation, `${appName}.json`);
   if (!fs.existsSync(appConfigLocation)) {
     await fs.mkdirp(appConfigLocation);

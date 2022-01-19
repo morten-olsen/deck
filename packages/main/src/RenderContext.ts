@@ -1,8 +1,9 @@
 import { StreamDeck } from "elgato-stream-deck";
 import sharp from 'sharp';
 import { Button } from "./App";
+import { AllowedAny } from './types';
 
-const debounce = <TArgs extends any[]>(fn: (...args: TArgs) => any, timeout = 300) => {
+const debounce = <TArgs extends AllowedAny[]>(fn: (...args: TArgs) => AllowedAny, timeout = 300) => {
   let timer: NodeJS.Timeout | undefined;
   return (...args: TArgs) => {
     if (timer) {
@@ -12,8 +13,8 @@ const debounce = <TArgs extends any[]>(fn: (...args: TArgs) => any, timeout = 30
   };
 }
 
-interface ButtonPosition {
-  subscription: any;
+type ButtonPosition = {
+  subscription: () => void;
   button: Button;
 }
 
@@ -30,7 +31,8 @@ class RenderContext {
     const { button: current } = this.#buttons[i] || {};
     if (current?.image) {
       const run = async () => {
-        const image = await current.image!;
+        const image = await current.image;
+        if (!image) return;
         const adjusted = sharp(image)
           .flatten()
           .resize(this.#deck.ICON_SIZE, this.#deck.ICON_SIZE)

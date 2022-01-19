@@ -1,6 +1,6 @@
 import { App } from './App';
 
-interface ActionApi {
+type ActionApi = {
   update: () => void;
   open: (app: App) => void;
   back: () => void;
