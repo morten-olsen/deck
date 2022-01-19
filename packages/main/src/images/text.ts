@@ -1,6 +1,6 @@
 import { createCanvas } from './canvas';
 
-interface Options {
+type Options = {
   font?: string;
   background?: string;
   color?: string;
