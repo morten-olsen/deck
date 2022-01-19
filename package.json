@@ -13,7 +13,7 @@
   "scripts": {
     "postinstall": "husky install",
     "test:lint": "eslint packages/*/src --fix",
-    "version": "yarn install --no-immutable && git stage yarn.lock",
+    "version": "yarn install --no-immutable && cp README.md packages/main/ && git stage yarn.lock packages/main/",
     "dev:example": "yarn workspace @morten-olsen/deck-example run dev",
     "build:lib": "tsc --build",
     "build:lib:watch": "tsc --build --watch",
