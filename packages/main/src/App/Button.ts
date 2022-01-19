@@ -2,20 +2,20 @@ import Emitter from 'eventemitter3';
 import { ActionApi } from '../ActionApi';
 
 type Color = [number, number, number];
-interface Events {
+type Events = {
   update: (button: Button) => void;
 }
 
-interface Args {
+type Args = {
   background?: Color;
-  action: Action;
+  action?: Action;
   image?: Buffer | Promise<Buffer>;
 }
 
 type Action = (context: ActionApi) => void;
 
 class Button extends Emitter<Events> {
-  #action: Action;
+  #action?: Action;
   #background?: Color;
   #image?: Buffer | Promise<Buffer>;
 
@@ -34,22 +34,22 @@ class Button extends Emitter<Events> {
     return this.#action;
   }
 
-  public get background() {
-    return this.#background;
-  }
-
-  public get image() {
-    return this.#image;
-  }
-
-  public set action(value: Action) {
+  public set action(value: Action | undefined) {
     this.#action = value;
     this.emit('update', this);
+  }
+
+  public get background() {
+    return this.#background;
   }
 
   public set background(value: [number, number, number] | undefined) {
     this.#background = value;
     this.emit('update', this);
+  }
+
+  public get image() {
+    return this.#image;
   }
 
   public set image(value: Buffer | Promise<Buffer> | undefined) {

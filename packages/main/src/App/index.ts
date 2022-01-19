@@ -3,7 +3,7 @@ import { Layout } from '../Layout';
 import { BasicLayout } from '../layouts/basic';
 import { Button } from './Button';
 
-interface Events {
+type Events = {
   update: (button: Button) => void;
   remove: (button: Button) => void;
   add: (button: Button) => void;
