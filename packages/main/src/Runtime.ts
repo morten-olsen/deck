@@ -1,4 +1,4 @@
-import { openStreamDeck, StreamDeck } from 'elgato-stream-deck';
+import { listStreamDecks, openStreamDeck, StreamDeck } from 'elgato-stream-deck';
 import { App, Button } from './App';
 import { ActionApi } from './ActionApi';
 import { RenderContext } from './RenderContext';
@@ -9,9 +9,9 @@ class Runtime implements ActionApi {
   #stickyButtons: Button[] = [];
   #renderContext: RenderContext;
 
-  constructor(root: App) {
+  constructor(root: App, deck = openStreamDeck()) {
     this.#stack = [root];
-    this.#deck = openStreamDeck();
+    this.#deck = deck;
     this.#renderContext = new RenderContext(this.#deck);
     this.#focus();
     this.#deck.on('down', this.#onDown);
@@ -129,4 +129,4 @@ class Runtime implements ActionApi {
   }
 }
 
-export { Runtime };
+export { Runtime, listStreamDecks };

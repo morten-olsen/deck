@@ -1,6 +1,6 @@
 import Emitter from 'eventemitter3';
 import { Layout } from '../Layout';
-import { BasicLayout } from '../layouts/basic';
+import { BasicLayout } from '../layouts';
 import { Button } from './Button';
 
 type Events = {
