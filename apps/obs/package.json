@@ -1,6 +1,8 @@
 {
   "name": "@morten-olsen/deck-apps-obs",
   "version": "1.2.1",
+  "author": "Morten Olsen <morten+pgp@olsen.pro>",
+  "repository": "github:morten-olsen/deck",
   "main": "dist/index.js",
   "packageManager": "yarn@3.1.0",
   "publishConfig": {

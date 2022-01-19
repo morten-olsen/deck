@@ -42,8 +42,6 @@ class RenderContext {
         this.#deck.fillImage(i, final);
       };
       run();
-    } else if (current?.background) {
-      this.#deck.fillColor(i, ...current.background);
     } else {
       this.#deck.clearKey(i)
     }

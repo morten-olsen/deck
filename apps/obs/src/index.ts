@@ -127,7 +127,6 @@ class ObsApp extends App {
   }
 
   #setup = debounce(handleError(async () => {
-    this.#connectButton.background = [0, 255, 0];
     Object.values(this.#scenes).forEach(b => this.removeButton(b));
     this.#scenes = {};
     const scenes = await this.#socket.send('GetSceneList');
