@@ -13,7 +13,7 @@ class Runtime implements ActionApi {
     this.#stack = [root];
     this.#deck = openStreamDeck();
     this.#renderContext = new RenderContext(this.#deck);
-    this.#focus(root);
+    this.#focus();
     this.#deck.on('down', this.#onDown);
   }
 
@@ -34,7 +34,8 @@ class Runtime implements ActionApi {
     this.#renderContext.render(buttons)
   }
 
-  #focus = (app: App) => {
+  #focus = () => {
+    const app = this.#current;
     app.on('add', this.#onAdd);
     app.on('remove', this.#onRemove);
     app.on('render', this.#render);
@@ -69,7 +70,7 @@ class Runtime implements ActionApi {
     if (this.#stack.length < 2) return;
     const current = this.#stack.pop()!;
     this.#unfocus(current);
-    this.#focus(this.#current);
+    this.#focus();
   }
 
   public open = (app: App) => {
@@ -79,7 +80,7 @@ class Runtime implements ActionApi {
       this.#stack.splice(index, 1);
     }
     this.#stack.push(app);
-    this.#focus(this.#current);
+    this.#focus();
   }
 
   public addStickButton = (button: Button) => {
