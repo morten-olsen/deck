@@ -78,7 +78,7 @@ You should now have a button which shows the current time.
 
 `deck` is intended for multiple apps, where apps can open other apps or go back to the previous one. Button `action` receive an api which can be used for this navigation.
 
-```
+```typescript
 const appA = new App();
 const backButton = new Button({
   image: createText('Go back'),
