@@ -1,6 +1,6 @@
 {
   "name": "@morten-olsen/deck-example",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Morten Olsen <morten+pgp@olsen.pro>",
   "repository": "github:morten-olsen/deck",
   "packageManager": "yarn@3.1.0",
@@ -21,7 +21,7 @@
     "pkg": "^5.5.2"
   },
   "dependencies": {
-    "@morten-olsen/deck": "^1.2.3",
-    "@morten-olsen/deck-apps-obs": "^1.2.3"
+    "@morten-olsen/deck": "^1.2.4",
+    "@morten-olsen/deck-apps-obs": "^1.2.4"
   }
 }
