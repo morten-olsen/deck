@@ -3,10 +3,12 @@
 /*.log
 /packages/*/node_modules
 /packages/*/pack
+/packages/*/docs
 /packages/*/*.log
 /packages/*/dist
 /packages/*/bundle
 /apps/*/node_modules
+/apps/*/docs
 /apps/*/*.log
 /apps/*/dist
 /apps/*/bundle
