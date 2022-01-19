@@ -42,7 +42,8 @@ class Runtime implements ActionApi {
     this.#render();
   } 
 
-  #unfocus = (app: App) => {
+  #unfocus = () => {
+    const app = this.#current;
     app.off('add', this.#onAdd);
     app.off('remove', this.#onRemove);
     app.off('render', this.#render);
@@ -66,21 +67,45 @@ class Runtime implements ActionApi {
     this.#render();
   }
 
-  public back = () => {
-    if (this.#stack.length < 2) return;
-    const current = this.#stack.pop()!;
-    this.#unfocus(current);
+  public updateStack = (fn: (stack: App[]) => App[]) => {
+    this.#unfocus();
+    const newStack = fn([...this.#stack]);
+    if (newStack.length === 0) {
+      throw new Error('Stack should have at least one app');
+    }
+    this.#stack = newStack;
     this.#focus();
   }
 
+  public back = () => {
+    if (this.#stack.length < 2) return;
+    this.updateStack((stack) => {
+      stack.pop()!;
+      return stack;
+    });
+  }
+
   public open = (app: App) => {
-    this.#unfocus(this.#current);
-    if (this.#stack.includes(app)) {
-      const index = this.#stack.findIndex(a => a === app);
-      this.#stack.splice(index, 1);
+    this.updateStack((stack) => {
+      if (stack.includes(app)) {
+        const index = stack.findIndex(a => a === app);
+        stack.splice(index, 1);
+      }
+      stack.push(app);
+      return stack;
+    });
+  }
+
+  public popTo = (app: App) => {
+    if (!this.#stack.includes(app)) {
+      this.open(app);
+      return;
     }
-    this.#stack.push(app);
-    this.#focus();
+    this.updateStack((stack) => {
+      const index = stack.findIndex(a => a === app);
+      const newStack = stack.slice(0, index);
+      return newStack;
+    });
   }
 
   public addStickButton = (button: Button) => {
